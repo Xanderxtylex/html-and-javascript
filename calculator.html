@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Calculator</h2>
+    <h4>Multiplication calculator</h4>
+    <input type="number" id="x" placeholder="0">
+    <br>
+    <input type="number" id="y" placeholder="0">
+    <br>
+    <input type="submit" id="submit" value="=">
+    <br>
+    <div id="calc">
+    </div>
+    <script>
+        function calculator() {
+
+            let x = document.getElementById("x");
+            let y = document.getElementById("y");
+            let calc = document.getElementById("calc");
+            let submit = document.getElementById("submit");
+            let ans = document.getElementById("ans");
+
+            submit.addEventListener("click", () => {
+                if (x.value == "") { alert("please, insert a value"); }
+                else if (y.value == "") { alert("please, insert a value"); }
+                else {
+                    let ans = x.value * y.value;
+                    let p = document.createElement("p")
+
+                    p.innerText = ans;
+                    calc.appendChild(p)
+                    x.value = "";
+                    y.value = "";
+
+                }
+            })
+        }
+        calculator();
+    </script>
+
+</body>
+
+</html>
